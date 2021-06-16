@@ -11,6 +11,7 @@ function createUser(first, last) {
 }
 console.log(createUser('Brandon', 'Johnson'));
 
+// ===================================================================
 
 const userMe = {
     firstName: 'Brandon',
@@ -23,6 +24,8 @@ function setAge(user, age) {
     return user;
 }
 console.log(setAge(userMe, 50))
+
+// ===================================================================
 
 function incrementAge(user) {
     user.age += 1;
@@ -37,11 +40,15 @@ const car = {
     needsMaitenance: true
 };
 
+// ===================================================================
+
 function fixCar(car) {
     car.needsMaitenance = false;
     return car;
 }
 console.log(fixCar(car))
+
+// ===================================================================
 
 const student = {
     name: 'Anthony DeRosa',
@@ -59,11 +66,99 @@ function addGrades(student, newGrades) {
 }
 console.log(addGrades(student, newGrades))
 
+// ===================================================================
 
+function getDataType(car, key) {
+    let type = (typeof car[key])
+    return type;
+}
+console.log(getDataType(car, 'make'))
 
+// ===================================================================
 
+const todos = [
+    { 
+        title: 'Get gas', 
+        isComplete: false },
+    { 
+        title: 'Buy bread', 
+        isComplete: true  
+    }
+];
 
+const newTodo = {
+    title: 'Call mom', 
+    isComplete: false
+};
 
+function addTodo(todos, newTodo) {
+    todos.push(newTodo)
+    return todos
+}
+console.log(addTodo(todos, newTodo))
+
+// ===================================================================
+
+const playlist = {
+    title: 'My jams',
+    duration: 7,
+    songs: [
+        {
+            title: 'Texas Sun',
+            artist: 'Khruangbin',
+            duration: 4
+        },
+        {
+            title: 'Malamente',
+            artist: 'Rosalia',
+            duration: 3
+        }
+    ]
+};
+
+const newSong = {
+    title: 'Old Friends',
+    artist: 'Pinegrove',
+    duration: 3
+};
+
+function addSong(playlist, song) {
+    playlist.songs.push(song);
+    playlist.duration += song.duration;
+    return playlist;
+}
+console.log(addSong(playlist, newSong))
+
+// ===================================================================
+
+let reportCard = {
+    lowestGrade: 70,
+    highestGrade: 96,
+    averageGrade: 82,
+    grades: [70, 95, 80]
+};
+
+function updateReportCard(reportCard, newGrade) {
+    let sum = 0;
+    
+    if (newGrade <= 100 || newGrade >= 0) {
+        reportCard.grades.push(newGrade);
+        reportCard.lowestGrade = Math.min(...reportCard.grades);
+        reportCard.highestGrade = Math.max(...reportCard.grades);
+        
+        for(i = 0; i < reportCard.grades.length; i++) {
+            sum += reportCard.grades[i];
+            
+            reportCard.averageGrade = sum / reportCard.grades.length
+        }
+    }
+
+    else {
+    }
+    
+    return reportCard;
+}
+console.log(updateReportCard(reportCard, 5))
 
 // ┌─────────────────────────────────────────────────────────────────────────┐
 // │ Code used for testing. Do not modify!                                   │                         
